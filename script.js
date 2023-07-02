@@ -21,6 +21,7 @@ function countBy(x, n) {
 function century(year) {
   return Math.ceil(year / 100);
 }
+
 // Summation of every number from 1 to num. Assuming the number will always be a positive integer greater than 0.
 
 var summation = function (num) {
@@ -30,3 +31,13 @@ var summation = function (num) {
   }
   return result;
 };
+
+// Sum all the numbers of a given array, except the highest and the lowest element. If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+function sumArray(array) {
+  if (array === null || array === undefined || array.length <= 1) {
+    return 0;
+  } else {
+    let result = array.reduce((a, b) => a + b, 0);
+    return (result -= Math.max(...array) + Math.min(...array));
+  }
+}

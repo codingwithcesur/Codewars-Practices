@@ -41,3 +41,7 @@ function sumArray(array) {
     return (result -= Math.max(...array) + Math.min(...array));
   }
 }
+
+// Find Maximum and Minimum Values of a List.
+const min = (list) => Math.min(...list);
+const max = (list) => Math.max(...list);

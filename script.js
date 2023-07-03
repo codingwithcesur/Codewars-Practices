@@ -66,12 +66,12 @@ function sumArray(array) {
 
 // Find Maximum and Minimum Values of a List.
 // My solution
-var min = function (list) {
+var min1 = function (list) {
   list.unshift(Math.min(...list));
   return list[0];
 };
 
-var max = function (list) {
+var max1 = function (list) {
   list.unshift(Math.max(...list));
   return list[0];
 };
@@ -88,3 +88,9 @@ var countSheep = function (num) {
   }
   return result;
 };
+
+// DNA to RNA Conversion
+// My solution and best practice
+function DNAtoRNA(dna) {
+  return dna.replace(/T/g, "U");
+}

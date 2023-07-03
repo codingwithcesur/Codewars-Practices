@@ -94,3 +94,11 @@ var countSheep = function (num) {
 function DNAtoRNA(dna) {
   return dna.replace(/T/g, "U");
 }
+// You receive an array with your peers' test scores. Now calculate the average and compare your score! Return True if you're better, else False! Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+// My solution and best practice
+function betterThanAverage(classPoints, yourPoints) {
+  let classavr = yourPoints;
+  classPoints.map((x) => (classavr += x));
+  classavr /= classPoints.length + 1;
+  return yourPoints > classavr ? true : false;
+}

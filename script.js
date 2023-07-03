@@ -33,6 +33,7 @@ var summation = function (num) {
 };
 
 // Sum all the numbers of a given array, except the highest and the lowest element. If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+
 function sumArray(array) {
   if (array === null || array === undefined || array.length <= 1) {
     return 0;
@@ -45,3 +46,13 @@ function sumArray(array) {
 // Find Maximum and Minimum Values of a List.
 const min = (list) => Math.min(...list);
 const max = (list) => Math.max(...list);
+
+// Given a non-negative integer, return a string with a murmur:
+
+var countSheep = function (num) {
+  let result = "";
+  for (let i = 1; i <= num; i++) {
+    result += `${i} sheep...`;
+  }
+  return result;
+};

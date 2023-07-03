@@ -94,6 +94,7 @@ var countSheep = function (num) {
 function DNAtoRNA(dna) {
   return dna.replace(/T/g, "U");
 }
+
 // You receive an array with your peers' test scores. Now calculate the average and compare your score! Return True if you're better, else False! Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
 // My solution and best practice
 function betterThanAverage(classPoints, yourPoints) {
@@ -101,4 +102,25 @@ function betterThanAverage(classPoints, yourPoints) {
   classPoints.map((x) => (classavr += x));
   classavr /= classPoints.length + 1;
   return yourPoints > classavr ? true : false;
+}
+// Detect Pangram
+// My solution
+function isPangram1(string) {
+  const alphabet = [..."abcdefghijklmnopqrstuvwxyz"];
+  let result = 0;
+  for (let i = 0; i < alphabet.length; i++) {
+    if (string.toLowerCase().includes(alphabet[i])) {
+      result += 1;
+    }
+  }
+  if (result === 26) {
+    return true;
+  }
+  return false;
+}
+// Best practice
+function isPangram(string) {
+  return "abcdefghijklmnopqrstuvwxyz"
+    .split("")
+    .every((x) => string.toLowerCase().includes(x));
 }

@@ -124,3 +124,16 @@ function isPangram(string) {
     .split("")
     .every((x) => string.toLowerCase().includes(x));
 }
+
+// Is the integer a square number?
+// My solution
+function isSquare1(n) {
+  if (Math.sqrt(n) === Math.floor(Math.sqrt(n))) {
+    return true;
+  }
+  return false;
+}
+// Best practice
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}

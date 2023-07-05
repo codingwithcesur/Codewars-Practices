@@ -137,3 +137,9 @@ function isSquare1(n) {
 function isSquare(n) {
   return Math.sqrt(n) % 1 === 0;
 }
+
+// Convert number to reversed array of digits.
+// My solution and best practice
+function digitize(n) {
+  return n.toString().split("").reverse().map(Number);
+}

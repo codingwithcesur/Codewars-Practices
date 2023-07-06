@@ -143,3 +143,19 @@ function isSquare(n) {
 function digitize(n) {
   return n.toString().split("").reverse().map(Number);
 }
+
+// Binary to Number
+// My solution
+function binaryArrayToNumber1(arr) {
+  let result = 0;
+  let counter = 1;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === 1) {
+      result += counter;
+    }
+    counter *= 2;
+  }
+  return result;
+}
+// Best practice
+const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);

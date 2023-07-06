@@ -70,7 +70,6 @@ var min1 = function (list) {
   list.unshift(Math.min(...list));
   return list[0];
 };
-
 var max1 = function (list) {
   list.unshift(Math.max(...list));
   return list[0];
@@ -103,6 +102,7 @@ function betterThanAverage(classPoints, yourPoints) {
   classavr /= classPoints.length + 1;
   return yourPoints > classavr ? true : false;
 }
+
 // Detect Pangram
 // My solution
 function isPangram1(string) {
@@ -159,6 +159,7 @@ function binaryArrayToNumber1(arr) {
 }
 // Best practice
 const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
+
 // Shortest word in a string
 // My solution and best practice
 function findShort(s) {
@@ -186,27 +187,4 @@ class SmallestIntegerFinder {
   findSmallestInt(args) {
     return Math.min(...args);
   }
-}
-
-// break camelCase
-// My solution
-function breakcamelCase1(string) {
-  let result = "";
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] === string[i].toUpperCase()) {
-      result += " ";
-    }
-    result += string.substring(i, i + 1);
-  }
-  return result;
-}
-// Best practice
-function breakcamelCase(string) {
-  string = string.split("").map(function (el) {
-    if (el === el.toUpperCase()) {
-      el = " " + el;
-    }
-    return el;
-  });
-  return string.join("");
 }

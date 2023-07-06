@@ -188,3 +188,26 @@ class SmallestIntegerFinder {
     return Math.min(...args);
   }
 }
+
+// break camelCase
+// My solution
+function breakcamelCase1(string) {
+  let result = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      result += " ";
+    }
+    result += string.substring(i, i + 1);
+  }
+  return result;
+}
+// Best practice
+function breakcamelCase(string) {
+  string = string.split("").map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = " " + el;
+    }
+    return el;
+  });
+  return string.join("");
+}

@@ -159,3 +159,18 @@ function binaryArrayToNumber1(arr) {
 }
 // Best practice
 const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
+// Shortest word in a string
+// My solution and best practice
+function findShort(s) {
+  let arr = s.split(" ");
+  let result = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length < result.length) {
+      result = arr[i];
+    }
+  }
+  return result.length;
+}
+console.log(
+  findShort1("turns out random test cases are easier than writing out ba ones")
+);

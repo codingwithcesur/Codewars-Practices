@@ -171,6 +171,42 @@ function findShort(s) {
   }
   return result.length;
 }
-console.log(
-  findShort1("turns out random test cases are easier than writing out ba ones")
-);
+// Make negative
+// My solution and best practice
+function makeNegative(num) {
+  if (num <= 0) {
+    return num;
+  } else {
+    return -num;
+  }
+}
+// Smallest integer in array
+// My solution and best practice
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args);
+  }
+}
+
+// break camelCase
+// My solution
+function breakcamelCase1(string) {
+  let result = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      result += " ";
+    }
+    result += string.substring(i, i + 1);
+  }
+  return result;
+}
+// Best practice
+function breakcamelCase(string) {
+  string = string.split("").map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = " " + el;
+    }
+    return el;
+  });
+  return string.join("");
+}

@@ -211,3 +211,29 @@ function breakcamelCase(string) {
   });
   return string.join("");
 }
+
+// Two sum
+// My solution
+function twoSum1(numbers, target) {
+  result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    for (let u = 0; u < numbers.length; u++) {
+      if (numbers[i] + numbers[u] === target && i !== u) {
+        result = [i, u];
+      }
+    }
+  }
+  return result;
+}
+// Best practice
+function twoSum(numbers, target) {
+  result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    for (let u = 0; u < numbers.length; u++) {
+      if (numbers[i] + numbers[u] === target && i !== u) {
+        result = [i, u];
+      }
+    }
+  }
+  return result;
+}

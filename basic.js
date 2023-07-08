@@ -237,3 +237,53 @@ function twoSum(numbers, target) {
   }
   return result;
 }
+
+// Sort the odd
+// My solution
+function sortArray1(array) {
+  let result = [];
+  let odd = [];
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 !== 0) {
+      odd.push(array[i]);
+    }
+  }
+  odd.sort((a, b) => a - b);
+  console.log(odd);
+  for (let u = 0; u < array.length; u++) {
+    if (array[u] % 2 === 0) {
+      result[u] = array[u];
+    }
+  }
+  for (let j = 0; j < array.length; j++) {
+    if (result[j] === undefined) {
+      result[j] = odd[counter];
+      counter++;
+    }
+  }
+  return result;
+}
+// Best practice
+function sortArray(array) {
+  var odds = [];
+  //loop, if it's odd, push to odds array
+  for (var i = 0; i < array.length; ++i) {
+    if (array[i] % 2 !== 0) {
+      odds.push(array[i]);
+    }
+  }
+  //sort odds from smallest to largest
+  odds.sort(function (a, b) {
+    return a - b;
+  });
+
+  //loop through array, replace any odd values with sorted odd values
+  for (var j = 0; j < array.length; ++j) {
+    if (array[j] % 2 !== 0) {
+      array[j] = odds.shift();
+    }
+  }
+
+  return array;
+}

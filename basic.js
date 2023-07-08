@@ -287,3 +287,26 @@ function sortArray(array) {
 
   return array;
 }
+
+// Roman numerals decoder
+// My solution and best practice
+function romanNum(roman) {
+  result = 0;
+  const romanNums = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+  for (let i = 0; i < roman.length; i++) {
+    if (romanNums[roman[i]] < romanNums[roman[i + 1]]) {
+      result -= romanNums[roman[i]];
+    } else {
+      result += romanNums[roman[i]];
+    }
+  }
+  return result;
+}

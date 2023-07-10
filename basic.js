@@ -310,3 +310,16 @@ function romanNum(roman) {
   }
   return result;
 }
+
+// Your order, please
+// My solution and best practice
+function order(words) {
+  let result = [];
+  let arr = words.split(" ");
+  for (let i = 0; i < arr.length; i++) {
+    result[arr[i].match(/\d+/g) - 1] = arr[i];
+  }
+  return result.join(" ");
+}
+
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"));

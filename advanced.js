@@ -22,3 +22,27 @@ function moveZeros(arr) {
   });
   return filtedList.concat(zeroList);
 }
+
+// First non-repeating character
+// My solution
+function firstNonRepeatingLetter1(s) {
+  let lowerS = s.toLowerCase();
+  let result = "";
+  for (let i = 0; i < lowerS.length; i++) {
+    if (lowerS.indexOf(lowerS[i]) === lowerS.lastIndexOf(lowerS[i])) {
+      result = s[i];
+      break;
+    }
+  }
+  if (result === undefined || s.length === 0) {
+    return "";
+  }
+  return result;
+}
+// Best practice
+function firstNonRepeatingLetter(s) {
+  var t = s.toLowerCase();
+  for (var x = 0; x < t.length; x++)
+    if (t.indexOf(t[x]) === t.lastIndexOf(t[x])) return s[x];
+  return "";
+}
